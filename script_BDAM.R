@@ -163,6 +163,15 @@ View(codigo_IBGE)
 # Criar uma nova variável em dados_bd4 MUNICIPIOS atribuindo os códigos dos municípios, de forma a ficar
 # coerente com os nomes dos municipios e códigos IBGE
 
+UF<-c(33,3304557,3303302,3303500,3303906,3306206,3301009,3300704,
+      3300100,3302700,3301702,3304904,3306107)
+
+# Tenho o consentimento que não funcionaria com um grande número de
+# observações p/ dados_bd4
+
+dados_bd4$MUNICIPIOS<-UF
+# View(dados_bd4)
+
 # Ao terminar a Tarefa 2 commit com a mensagem " script - tarefa 1 a 2" e envie para o repositório Treino_Extensao
 
 
