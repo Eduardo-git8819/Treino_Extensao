@@ -215,6 +215,11 @@ View(dados_bd5)
 # Tarefa 2: Manipulação dos dados
 # Observe que os números estão com ponto indicando milhar. Estes pontos devem ser extraídos para não confundir com decimal
 
+dados_bd5$NUM_CARROS_REGISTRADOS<-dados_bd5$NUM_CARROS_REGISTRADOS*1000
+
+dados_bd5$NUM_MOTOS_REGISTRADAS<-dados_bd5$NUM_MOTOS_REGISTRADAS*1000
+
+
 # Ao terminar a Tarefa 2 commit com a mensagem " script - tarefa 1 a 2" e envie para o repositório Treino_Extensao
 
 
