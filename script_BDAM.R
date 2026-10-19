@@ -231,6 +231,76 @@ dados_bd5$NUM_MOTOS_REGISTRADAS<-dados_bd5$NUM_MOTOS_REGISTRADAS*1000
 # NCR: número de carros registrados
 # NMR: número de motos registradas
 
+
+# Criação do banco de dados BANCO5_RJ
+
+UF=33
+
+col_UF<-substr(dados_bd5$MUNICIPIO,1,2)
+
+View(col_UF)
+
+BANCO5_RJ<-dados_bd5[col_UF == UF ,]
+
+# View(BANCO5_RJ)
+
+# Criando as colunas necessárias:
+
+
+# ANO
+
+BANCO5_RJ$ANO<-2025
+
+
+# NIVEL 
+
+BANCO5_RJ$NIVEL<-"MUNICIPIO"
+
+
+# CODIGO
+
+names(BANCO5_RJ)[1]<-"CODIGO"
+
+
+# NCR
+
+names(BANCO5_RJ)[2]<-"NCR"
+
+
+# NMR
+
+names(BANCO5_RJ)[3]<-"NMR"
+
+
+# Organizando a ordem de cada coluna
+# do banco BANCO5_RJ, além de padronizar
+# a coluna CODIGO
+
+BANCO5_RJ$CODIGO<-as.character(BANCO5_RJ$CODIGO)
+
+
+BANCO5_RJ<-BANCO5_RJ[,c("ANO","NIVEL","CODIGO","NCR","NMR")]
+
+
+# Criação da linha_estado
+
+
+linha_estado<-data.frame(
+  ANO=2025,
+  NIVEL="UF",
+  CODIGO="33",
+  NCR=sum(BANCO5_RJ$NCR, na.rm = TRUE),
+  NMR=sum(BANCO5_RJ$NMR, na.rm = TRUE))
+  
+View(linha_estado)                        
+                         
+# Concatenando os dois bancos em um só
+
+BANCO5_RJ<-rbind(linha_estado,BANCO5_RJ)
+
+View(BANCO5_RJ)
+dim(BANCO5_RJ)
+
 # Ao terminar a Tarefa 3 commit com a mensagem " script - tarefa 1 a 3" e envie para o repositório Treino_Extensao
 
 
