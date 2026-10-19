@@ -201,6 +201,14 @@ dados_bd4$MUNICIPIOS<-UF
 # Tarefa 1: Leitura do banco de dados banco 5 = SINISA.csv com o nome de dados_bd5 
 # Ler os arquivos, verificar estruturas dos dados e dar uma olhada nos dados
 
+dados_bd5<-read.csv("banco 5 SINISA.csv", header = T, sep =";")
+
+str(dados_bd5)
+summary(dados_bd5)
+dim(dados_bd5)
+
+View(dados_bd5)
+
 # Ao terminar a Tarefa 1 commit com a mensagem " script - tarefa 1" e envie para o repositório Treino_Extensao
 
 
